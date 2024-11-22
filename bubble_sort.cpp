@@ -22,7 +22,6 @@ void bubble_sort(vector<int> &arr)
             }
         }
     }
-    print_array(arr);
 }
 
 int main()
@@ -38,6 +37,10 @@ int main()
         cin >> temp;
         arr.push_back(temp);
     }
+    cout << "Before sorting: " << endl;
+    print_array(arr);
     bubble_sort(arr);
+    cout << "After sorting: " << endl;
+    print_array(arr);
     return 0;
 }

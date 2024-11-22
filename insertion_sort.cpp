@@ -23,7 +23,6 @@ void insertion_sort(vector<int> &arr)
         }
         arr[hole] = value;
     }
-    print_array(arr);
 }
 
 int main()
@@ -39,6 +38,10 @@ int main()
         cin >> temp;
         arr.push_back(temp);
     }
+    cout << "Before sorting: " << endl;
+    print_array(arr);
     insertion_sort(arr);
+    cout << "After sorting: " << endl;
+    print_array(arr);
     return 0;
 }
