@@ -9,19 +9,18 @@ void print_array(vector<int> &arr)
     }
     cout << endl;
 }
-void insertion_sort(vector<int> &arr)
+void insertion_sort(vector<int> &arr, int n)
 {
-    int size = arr.size();
-    for (int i = 1; i < size - 1; i++)
+    for (int i = 1; i < n; ++i)
     {
         int value = arr[i];
-        int hole = i;
-        while(hole>0 && arr[hole-1]>value)
+        int hole = i-1;
+        while(hole>=0 && arr[hole]>value)
         {
-            arr[hole] = arr[hole-1];
+            arr[hole+1] = arr[hole];
             hole--;
         }
-        arr[hole] = value;
+        arr[hole+1] = value;
     }
 }
 
@@ -40,7 +39,7 @@ int main()
     }
     cout << "Before sorting: " << endl;
     print_array(arr);
-    insertion_sort(arr);
+    insertion_sort(arr, n);
     cout << "After sorting: " << endl;
     print_array(arr);
     return 0;
